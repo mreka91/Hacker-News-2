@@ -1,0 +1,44 @@
+@media screen and (min-width: 440px) {
+  div.postSection {
+    width: 67%;
+  }
+  div.author {
+    width: 26%;
+  }
+}
+@media screen and (min-width: 500px) {
+  div.author {
+    width: 23%;
+  }
+}
+@media screen and (min-width: 600px) {
+  div.postSection {
+    width: 50%;
+  }
+  div.author {
+    width: 18%;
+  }
+}
+@media screen and (min-width: 700px) {
+  div.author {
+    width: 16%;
+  }
+}
+@media screen and (min-width: 800px) {
+  div.author {
+    width: 14%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  div.postSection {
+    width: 30%;
+  }
+  div.author {
+    width: 12%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  div.author {
+    width: 9%;
+  }
+}
