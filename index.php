@@ -77,7 +77,11 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="postSection">
                                     <div class="likeSection" ?>
                                         <div class="likeCounter">
-                                            <?php echo $post['likes'] . ' ' . "likes"; ?>
+                                            <?php if ($post['likes'] > 1) : ?>
+                                                <?php echo $post['likes'] . ' ' . "likes"; ?>
+                                            <?php else : ?>
+                                                <?php echo $post['likes'] . ' ' . "like"; ?>
+                                            <?php endif; ?>
                                         </div>
                                         <?php if (isset($_SESSION['user']['id'])) : ?>
 

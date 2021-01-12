@@ -10,6 +10,9 @@
   div.author {
     width: 23%;
   }
+  div.commentEdit {
+    width: 23%;
+  }
 }
 @media screen and (min-width: 600px) {
   div.postSection {
@@ -18,14 +21,23 @@
   div.author {
     width: 18%;
   }
+  div.commentEdit {
+    width: 18%;
+  }
 }
 @media screen and (min-width: 700px) {
   div.author {
     width: 16%;
   }
+  div.commentEdit {
+    width: 16%;
+  }
 }
 @media screen and (min-width: 800px) {
   div.author {
+    width: 14%;
+  }
+  div.commentEdit {
     width: 14%;
   }
 }
@@ -36,9 +48,15 @@
   div.author {
     width: 12%;
   }
+  div.commentEdit {
+    width: 12%;
+  }
 }
 @media screen and (min-width: 1200px) {
   div.author {
+    width: 9%;
+  }
+  div.commentEdit {
     width: 9%;
   }
 }
