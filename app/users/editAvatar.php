@@ -2,13 +2,13 @@
 require __DIR__ . '/../autoload.php';
 require __DIR__ . '/../../views/header.php';
 
-$errors = [];
+
 if (isset($_SESSION['user']['id'])) {
     $id = $_SESSION['user']['id'];
 
 
     if (isset($_FILES['avatar'])) {
-
+        $errors = [];
         $avatar = $_FILES['avatar'];
         $avatarName =  $_FILES['avatar']['name'];
 
@@ -20,6 +20,15 @@ if (isset($_SESSION['user']['id'])) {
         if ($avatar['size'] > 2097152) {
             $errors[] = 'The uploaded file exceeded the filesize limit.';
         }
+
+        if (count($errors) > 0) {
+            $_SESSION['errors'] = $errors;
+
+            redirect('/editProfile.php');
+
+            exit;
+        }
+
         if (count($errors) === 0) {
             $destination = __DIR__ . '/uploads/' . $avatarName;
 
@@ -43,5 +52,4 @@ if (isset($_SESSION['user']['id'])) {
         $statement->execute();
     }
 }
-
 redirect('/editProfile.php');

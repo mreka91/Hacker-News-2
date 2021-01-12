@@ -1,11 +1,18 @@
 <?php
 require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php';
-$msgs = [];
+
 $errors = [];
+
+if (isset($_SESSION['errors'])) {
+    $errors = $_SESSION['errors'];
+    unset($_SESSION['errors']);
+}
+
 if (isset($_SESSION['user']['id'])) {
     $user = $_SESSION['user'];
     $id = $_SESSION['user']['id'];
+
 
     $statement = $pdo->prepare('SELECT * FROM users WHERE id =:id');
 
@@ -23,11 +30,18 @@ if (isset($_SESSION['user']['id'])) {
 <article>
     <h2>Edit your profile!</h2>
 
+
+    <?php foreach ($errors as $error) : ?>
+        <p class="error"><?php echo $error; ?></p>
+    <?php endforeach; ?>
+
     <!-- /form-group -->
     <form class="avatarForm" action="app/users/editAvatar.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
         <div class="avatar">
-            <?php if (!$user['avatar']) : ?>
+            <?php if (count($errors) > 0) : ?>
+                <img src="/assets/img/avatar.png" alt="default profile image">
+            <?php elseif (!$user['avatar']) : ?>
                 <img src="/assets/img/avatar.png" alt="default profile image">
             <?php else : ?>
                 <?php if (file_exists(__DIR__ . '/app/users/uploads/' . $user['avatar'])) : ?>
