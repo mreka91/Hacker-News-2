@@ -1,4 +1,4 @@
-.storeComment {
+.updateComment {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,32 +7,32 @@
   height: 80%;
   margin-top: 100px;
 }
-.storeComment textarea {
+.updateComment textarea {
   width: 100%;
   margin-bottom: 5px;
 }
-.storeComment button {
+.updateComment button {
   width: 30%;
   margin-top: 5px;
 }
 @media screen and (min-width: 500px) {
-  .storeComment button {
+  .updateComment button {
     width: 20%;
   }
 }
 @media screen and (min-width: 700px) {
-  .storeComment button {
+  .updateComment button {
     width: 16%;
   }
-  .storeComment textarea {
+  .updateComment textarea {
     width: 80%;
   }
 }
 @media screen and (min-width: 1000px) {
-  .storeComment button {
+  .updateComment button {
     width: 12%;
   }
-  .storeComment textarea {
+  .updateComment textarea {
     width: 50%;
   }
 }

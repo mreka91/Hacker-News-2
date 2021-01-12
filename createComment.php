@@ -18,16 +18,16 @@ if (isset($_GET['id'])) {
     $post = $statement->fetch(PDO::FETCH_ASSOC);
 }
 ?>
-<article>
-    <form action="/app/comments/store.php" method="post">
-        <input type="hidden" id="postId" name="postId" value="<?php echo $postId; ?>">
-        <textarea rows="4" cols="50" class="form-control" name="comment" id="comment" placeholder="Write here..." required></textarea>
-        <small class="form-text text-muted"> Add a comment!</small>
+<!-- <article> -->
+<form class="storeComment" action="/app/comments/store.php" method="post">
+    <input type="hidden" id="postId" name="postId" value="<?php echo $postId; ?>">
+    <textarea rows="4" cols="50" class="form-control" name="comment" id="comment" placeholder="Write here..." required></textarea>
+    <small class="form-text text-muted"> Add a comment!</small>
 
 
-        <button type="submit" name="submit">submit</button>
-    </form>
+    <button type="submit" name="submit">submit</button>
+</form>
 
-</article>
+<!-- </article> -->
 
 <?php require __DIR__ . '/views/footer.php'; ?>

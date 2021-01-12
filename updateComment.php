@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
 
 <article>
 
-    <form action="app/comments/update.php" method="post">
+    <form class="updateComment" action="app/comments/update.php" method="post">
 
         <input type="hidden" id="id" name="id" value="<?php echo $comment['id']; ?>">
 

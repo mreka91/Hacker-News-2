@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="/assets/styles/media.css">
     <link rel="stylesheet" href="/assets/styles/editProfile.css">
     <link rel="stylesheet" href="/assets/styles/comment.css">
+    <link rel="stylesheet" href="/assets/styles/updateComment.css">
+
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 </head>
 
