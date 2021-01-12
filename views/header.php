@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="/assets/styles/navbar.css">
     <link rel="stylesheet" href="/assets/styles/media.css">
     <link rel="stylesheet" href="/assets/styles/editProfile.css">
+    <link rel="stylesheet" href="/assets/styles/comment.css">
+
 
 
 
