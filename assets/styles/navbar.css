@@ -39,7 +39,7 @@
     transition: 0.3s;
   }
   .side-nav a:hover {
-    color: #fff;
+    color: rgb(255, 255, 255);
   }
   .side-nav .btn-close {
     position: absolute;
@@ -75,7 +75,7 @@
     justify-content: space-between;
   }
   .navbar a:hover {
-    color: rgb(171, 175, 182);
+    color: rgb(15, 68, 240);
   }
   a.navbar-brand {
     width: 20%;
@@ -121,7 +121,7 @@
     justify-content: space-between;
   }
   .navbar a:hover {
-    color: rgb(171, 175, 182);
+    color: rgb(15, 68, 240);
   }
   a.navbar-brand {
     width: 15%;
