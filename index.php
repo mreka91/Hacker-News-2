@@ -3,8 +3,8 @@ require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php';
 
 
-$msgs = [];
-$errors = [];
+// $msgs = [];
+// $errors = [];
 
 
 
@@ -34,13 +34,13 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
             </p>
         <?php endif; ?>
 
-        <?php foreach ($errors as $error) : ?>
+        <!-- <?php foreach ($errors as $error) : ?>
             <p class="error"><?php echo $error; ?></p>
         <?php endforeach; ?>
 
         <?php if (isset($message)) : ?>
             <p class="success"><?php echo $message; ?></p>
-        <?php endif; ?>
+        <?php endif; ?> -->
 
         <ul>
             <li>
@@ -49,7 +49,7 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
             <li>
                 <a href="mostPopular.php"> Most popular</a>
             </li>
-            <li class="createPost">
+            <li class="createPosts">
                 <?php if (isset($_SESSION['user'])) : ?>
                     <a href="createPost.php"> Create your own post!</a>
                 <?php endif; ?>
@@ -171,18 +171,28 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                     <?php $comments = $statement->fetchAll(PDO::FETCH_ASSOC); ?>
 
 
-                                    <?php foreach ($comments as $comment) : ?>
-                                        <input type="hidden" name="id" value="<?php echo $comment['id']; ?>">
 
-                                        <?php $statement = $pdo->prepare('SELECT *  FROM users
-                                                                        INNER JOIN comments ON users.id = comments.userId;');
+                                    <?php foreach ($comments as $comment) : ?>
+
+                                        <input type="hidden" name="id" value="<?php echo $comment['id']; ?>">
+                                        <input type="hidden" name="postId" value="<?php echo $comment['postId']; ?>">
+                                        <input type="hidden" name="userId" value="<?php echo $comment['userId']; ?>">
+
+
+                                        <?php $statement = $pdo->prepare('SELECT * FROM comments
+                                                             INNER JOIN users  ON  comments.userId = users.id
+                                        WHERE id = :id ;');
+
+                                        if (!$statement) {
+                                            die(var_dump($pdo->errorInfo()));
+                                        }
+                                        $statement->bindParam(':id', $id, PDO::PARAM_INT);
+
+                                        $statement->execute();
+                                        $user = $statement->fetch(PDO::FETCH_ASSOC);
                                         ?>
 
-                                        <?php if (!$statement) {
-                                            die(var_dump($pdo->errorInfo()));
-                                        } ?>
-                                        <?php $statement->execute(); ?>
-                                        <?php $user = $statement->fetch(PDO::FETCH_ASSOC); ?>
+
 
 
                                         <div class="author">
@@ -196,9 +206,14 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                                 <?php endif; ?>
                                             </div>
                                             <div class="user">
-                                                <?php echo $user['firstName'] . ' ' . $user['lastName']; ?>
+                                                <?php if (!$user['firstName']) : ?>
+                                                    <?php echo ' Unknown User'; ?>
+                                                <?php else : ?>
+                                                    <?php echo $user['firstName'] . ' ' . $user['lastName']; ?>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
+
                                         <!-- <li class="liComment"> -->
                                         <div class="commentContent">
                                             <?php echo $comment['comment']; ?>
@@ -218,7 +233,9 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                             <?php endif; ?>
                                         </div>
                                         <!-- </li> -->
+
                                     <?php endforeach; ?>
+
                                     <!-- </ul> -->
                                     <!-- <button class="moreComments">Show more comments</button> -->
                                 </div>

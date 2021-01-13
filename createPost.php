@@ -7,30 +7,29 @@ require __DIR__ . '/views/header.php';
 
 ?>
 
-<article>
-    <form action="/app/posts/store.php" method="post" enctype="multipart/form-data">
+<!-- <article> -->
+<form class="createPost" action="/app/posts/store.php" method="post" enctype="multipart/form-data">
 
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input class="form-control" type="text" name="title" id="title" placeholder="Your post's title" required>
-            <small class="form-text text-muted">Please write the title*</small>
-        </div>
-        <!-- /form-group -->
-        <div class="form-group">
-            <label for="link">Link</label>
-            <input class="form-control" type="link" name="link" id="link" required>
-            <small class="form-text text-muted">Please write the link*</small>
-        </div>
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input class="form-control" type="text" name="title" id="title" required>
+        <small class="form-text text-muted">Please write the title*</small>
+    </div>
+    <!-- /form-group -->
+    <div class="form-group">
+        <label for="link">Link</label>
+        <input class="form-control" type="link" name="link" id="link" required>
+        <small class="form-text text-muted">Please write the link*</small>
+    </div>
 
-        <div class="description">
+    <div class="description">
+        <textarea rows="4" cols="42" class="form-control" name="description" id="description" placeholder="Write here..." required></textarea>
+        <small class="form-text text-muted"> Tell us what do your think!*</small>
+    </div>
+    <button type="submit" name="submit">submit</button>
+</form>
 
-            <textarea rows="4" cols="50" class="form-control" name="description" id="description" placeholder="Write here..." required></textarea>
-            <small class="form-text text-muted"> Tell us what do your think!*</small>
-        </div>
-        <button type="submit" name="submit">submit</button>
-    </form>
-
-</article>
+<!-- </article> -->
 
 
 <?php require __DIR__ . '/views/footer.php'; ?>

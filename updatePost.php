@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
 
 <article>
 
-    <form action="app/posts/update.php" method="post">
+    <form style="margin-top: 40px; " action="app/posts/update.php" method="post">
 
         <input type="hidden" id="id" name="id" value="<?php echo $post['id']; ?>">
 

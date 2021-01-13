@@ -1,0 +1,55 @@
+.createPost {
+  width: 80%;
+  margin-top: 40px;
+}
+div.description {
+  display: flex;
+  flex-direction: column;
+}
+.createPost textarea {
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  .createPost button {
+    width: 20%;
+  }
+  .createPost textarea {
+    width: 80%;
+  }
+  .createPost input {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 700px) {
+  .createPost button {
+    width: 16%;
+  }
+  .createPost textarea {
+    width: 80%;
+  }
+  .createPost input {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .createPost button {
+    width: 16%;
+  }
+  .createPost textarea {
+    width: 70%;
+  }
+  .createPost input {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .createPost button {
+    width: 10%;
+  }
+  .createPost textarea {
+    width: 60%;
+  }
+  .createPost input {
+    width: 60%;
+  }
+}

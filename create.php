@@ -13,7 +13,7 @@ require __DIR__ . '/views/header.php';
     <form action="app/users/create.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" id="email" placeholder="Your email address" required>
+            <input class="form-control" type="email" name="email" id="email" required>
             <small class="form-text text-muted">Please provide your email address*</small>
         </div>
         <!-- /form-group -->
