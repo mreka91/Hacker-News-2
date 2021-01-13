@@ -1,0 +1,205 @@
+/* body-style */
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+}
+/* article */
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+}
+h1 {
+  color: rgb(6, 29, 131);
+}
+article ul {
+  padding: 0px;
+  min-width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 16px;
+}
+article ul a {
+  text-decoration: none;
+}
+article ul a:hover {
+  color: rgb(15, 68, 240);
+}
+/* ol posts */
+div.posts {
+  min-width: 100%;
+}
+ol.olPosts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  min-width: 100%;
+}
+li.li {
+  min-width: 100%;
+  display: block;
+  background-color: rgb(245, 245, 245);
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 10px;
+}
+/* li  */
+div.title {
+  display: block;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 1000;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+div.title a {
+  font-size: 18px;
+  text-decoration: none;
+}
+div.title a:hover {
+}
+div.description {
+  display: block;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 3px;
+  margin-bottom: 5px;
+}
+div.time {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+div.content {
+  display: flex;
+  flex-direction: column;
+}
+div.postSection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+div.postSection a {
+  text-decoration: none;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0ms;
+  transition-property: all;
+}
+div.postSection a:hover {
+  color: rgb(15, 68, 240);
+  transform: translatey(-2px);
+}
+div.likeSection {
+  display: flex;
+  flex-direction: row;
+  width: 35%;
+  justify-content: space-evenly;
+  margin-right: 10px;
+}
+div.likeCounter {
+  margin-top: 4px;
+  font-size: 16px;
+  color: blue;
+}
+
+div.commentAndChangePost {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+div.addComment {
+  display: flex;
+  justify-self: flex-start;
+}
+div.changePost {
+  display: flex;
+  flex-direction: row;
+}
+
+ul.ulComments {
+  display: block;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+ul.liComment {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+div.author {
+  display: flex;
+  flex-direction: row;
+  max-width: 30%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+img {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+}
+div.user {
+  padding-top: 5px;
+  font-weight: 700px;
+}
+div.commentTime {
+  font-size: 12px;
+  padding-left: 30px;
+  margin-bottom: 5px;
+}
+div.commentContent {
+  padding-left: 30px;
+  margin-bottom: 5px;
+}
+div.commentEdit {
+  padding-left: 30px;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+  border-bottom: 1px solid rgb(13, 65, 235);
+}
+div.commentEdit a {
+  text-decoration: none;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0ms;
+  transition-property: all;
+}
+div.commentEdit a:hover {
+  color: rgb(15, 68, 240);
+  transform: translatey(-2px);
+}
