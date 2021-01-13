@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
 
 <article>
 
-    <form style="margin-top: 40px; " action="app/posts/update.php" method="post">
+    <form class="PostUpdate" style="margin-top: 40px; " action="app/posts/update.php" method="post">
 
         <input type="hidden" id="id" name="id" value="<?php echo $post['id']; ?>">
 
@@ -38,7 +38,7 @@ if (isset($_GET['id'])) {
 
         <div class="description">
             <label for="description">Description </label>
-            <textarea rows="4" cols="50" class="form-control" name="description" id="description"><?php echo $post['description']; ?></textarea>
+            <textarea rows="20" cols="50" class="form-control" name="description" id="description"><?php echo $post['description']; ?></textarea>
             <small class="form-text text-muted"> Tell us what do your think!*</small>
         </div>
 

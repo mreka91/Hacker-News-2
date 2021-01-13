@@ -38,6 +38,7 @@ article ul a {
   text-decoration: none;
 }
 article ul a:hover {
+  color: rgb(15, 68, 240);
 }
 /* ol posts */
 div.posts {
@@ -102,13 +103,19 @@ div.postSection {
 }
 div.postSection a {
   text-decoration: none;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0ms;
+  transition-property: all;
 }
 div.postSection a:hover {
+  color: rgb(15, 68, 240);
+  transform: translatey(-2px);
 }
 div.likeSection {
   display: flex;
   flex-direction: row;
-  width: 33%;
+  width: 35%;
   justify-content: space-evenly;
   margin-right: 10px;
 }
@@ -117,8 +124,7 @@ div.likeCounter {
   font-size: 16px;
   color: blue;
 }
-div.likeButton {
-}
+
 div.commentAndChangePost {
   width: 70%;
   display: flex;
@@ -137,9 +143,7 @@ div.changePost {
   display: flex;
   flex-direction: row;
 }
-div.ul {
-  /* background-color: blue; */
-}
+
 ul.ulComments {
   display: block;
   border-radius: 10px;
@@ -190,6 +194,12 @@ div.commentEdit {
 }
 div.commentEdit a {
   text-decoration: none;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0ms;
+  transition-property: all;
 }
 div.commentEdit a:hover {
+  color: rgb(15, 68, 240);
+  transform: translatey(-2px);
 }

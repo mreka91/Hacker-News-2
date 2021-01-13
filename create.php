@@ -10,7 +10,7 @@ require __DIR__ . '/views/header.php';
 <article>
     <h1>Sign up</h1>
 
-    <form action="app/users/create.php" method="post" enctype="multipart/form-data">
+    <form class="signUp" action="app/users/create.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="email">Email</label>
             <input class="form-control" type="email" name="email" id="email" required>

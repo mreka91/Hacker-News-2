@@ -54,4 +54,3 @@ if (isset($_SESSION['user']['id'])) {
 
 
 </article>
-<?php require __DIR__ . '/views/footer.php'; ?>

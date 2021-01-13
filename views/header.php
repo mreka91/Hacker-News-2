@@ -13,9 +13,18 @@
     <link rel="stylesheet" href="/assets/styles/navbar.css">
     <link rel="stylesheet" href="/assets/styles/media.css">
     <link rel="stylesheet" href="/assets/styles/editProfile.css">
-    <link rel="stylesheet" href="/assets/styles/comment.css">
+    <link rel="stylesheet" href="/assets/styles/createComment.css">
     <link rel="stylesheet" href="/assets/styles/updateComment.css">
     <link rel="stylesheet" href="/assets/styles/createPost.css">
+    <link rel="stylesheet" href="/assets/styles/updatePost.css">
+    <link rel="stylesheet" href="/assets/styles/footer.css">
+    <link rel="stylesheet" href="/assets/styles/create.css">
+    <link rel="stylesheet" href="/assets/styles/welcome.css">
+    <link rel="stylesheet" href="/assets/styles/about.css">
+
+
+
+
 
 
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
@@ -23,5 +32,3 @@
 
 <body>
     <?php require __DIR__ . '/navigation.php'; ?>
-
-    <!-- <div class="container"> -->

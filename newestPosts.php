@@ -220,8 +220,6 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
             </ol>
 
         </div>
-
-
     </article>
 </div>
 <?php require __DIR__ . '/views/footer.php'; ?>

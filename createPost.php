@@ -23,7 +23,7 @@ require __DIR__ . '/views/header.php';
     </div>
 
     <div class="description">
-        <textarea rows="4" cols="42" class="form-control" name="description" id="description" placeholder="Write here..." required></textarea>
+        <textarea rows="20" cols="42" class="form-control" name="description" id="description" placeholder="Write here..." required></textarea>
         <small class="form-text text-muted"> Tell us what do your think!*</small>
     </div>
     <button type="submit" name="submit">submit</button>

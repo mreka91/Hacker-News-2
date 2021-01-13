@@ -47,9 +47,9 @@ div.description {
     width: 10%;
   }
   .createPost textarea {
-    width: 60%;
+    width: 80%;
   }
   .createPost input {
-    width: 60%;
+    width: 80%;
   }
 }

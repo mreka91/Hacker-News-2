@@ -15,7 +15,7 @@ if (isset($_GET['commentId'])) {
     $statement->execute();
     $comment = $statement->fetch(PDO::FETCH_ASSOC);
 }
-// die(var_dump($comment));
+
 ?>
 
 <article>
@@ -24,7 +24,7 @@ if (isset($_GET['commentId'])) {
 
         <input type="hidden" id="id" name="commentId" value="<?php echo $comment['commentId']; ?>">
 
-        <textarea rows="4" cols="50" class="form-control" name="comment" id="comment"><?php echo $comment['comment']; ?></textarea>
+        <textarea rows="8" cols="50" class="form-control" name="comment" id="comment"><?php echo $comment['comment']; ?></textarea>
 
         <button type="submit" name="update">Update</button>
 

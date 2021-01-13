@@ -50,9 +50,6 @@
     margin-bottom: 5px;
   }
 
-  a.navbar-brand:hover {
-  }
-
   ul.navbar-nav {
     display: none;
   }
@@ -101,6 +98,8 @@
     text-decoration: none;
   }
   a.nav-link:hover {
+    color: rgb(15, 68, 240);
+    transform: translatey(-2px);
   }
 }
 @media screen and (min-width: 1000px) {
