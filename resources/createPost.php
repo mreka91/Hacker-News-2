@@ -18,7 +18,7 @@ require __DIR__ . '/views/header.php';
     <!-- /form-group -->
     <div class="form-group">
         <label for="link">Link</label>
-        <input class="form-control" type="link" name="link" id="link" required>
+        <input class="form-control" type="URL" name="link" id="link" required>
         <small class="form-text text-muted">Please write the link*</small>
     </div>
 

@@ -8,7 +8,7 @@ require __DIR__ . '/views/header.php';
 <article>
     <h1>Login</h1>
 
-    <form action="app/users/login.php" method="post">
+    <form style=" margin-bottom : 200px;" action="app/users/login.php" method="post">
         <div class="form-group">
             <label for="email">Email</label>
             <input class="form-control" type="email" name="email" id="email" placeholder="" required>
