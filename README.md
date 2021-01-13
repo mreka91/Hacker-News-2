@@ -56,8 +56,8 @@ $ php -S localhost:8000
 
 The project was tested by:
 
--
--
+- Simon Lindstedt
+- Evelyn Fredin
 
 ## Comments
 
@@ -69,4 +69,4 @@ The project was tested by:
 
 ## License
 
-MIT License. For more details https://github.com/Aseel88/Hacker-News/blob/main/LICENSE
+MIT License. For more details https://github.com/Aseel88/Hacker-News/tree/main/resources
