@@ -63,9 +63,16 @@ The project was tested by:
 
 ### Gilda Eklöf
 
--
--
--
+- I would suggest creating functions for all SQL queries and keeping them in the `functions.php` file, instead of having long queries in other files such as `index.php` or `createComment.php`.
+- Instead of having the `welcome.php` page, you could log in the user automatically after registration in `app/users/create.php`.
+- `app/users/create.php:14` the `$emails` variable doesn't seem to have any purpose here.
+- `app/users/create.php` users can create multiple accounts with the same email, since there's no function that checks that an email already exists.
+- `editprofile.php:95` since the input for password confirmation has a `required` attribute, I can't edit information such as email and biography without having to also change my password. I would suggest having a separate form for changing the password.
+- `app/users/profile.php:20` it seems like I can still change my password even if though the two passwords don't match. I would change `!=` to `!==` to check that the passwords are identical.
+- Neither author nor username are displayed on posts, maybe add some sort of identitification info so you know who posted what.
+- You could add `type="url"` in `createpost.php:21`, to prevent users from submitting other content than links in the url input.
+- To prevent reloading of the page when liking/unliking posts, I suggest using JSON.
+- `newestposts.php:19`, `mostpopular.php:19`, there doesn't seem to be a use for the `$users` variable here.
 
 ## License
 
