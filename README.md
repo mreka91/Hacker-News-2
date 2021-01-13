@@ -18,6 +18,7 @@
   Login system.
   Adding posts and comments.
 
+- The content of project isn't logical data.
 - The project should be public and, tested of two classmates .
 
 ## Technologies
@@ -44,7 +45,12 @@ Change directories to the new directory:
 $ cd ~/Hacker-News/
 ```
 
-Run a server.
+Run a local server using the command line:
+
+```
+$ php -S localhost:8000
+
+```
 
 ## Testers
 
@@ -54,6 +60,8 @@ The project was tested by:
 -
 
 ## Comments
+
+### Gilda Eklöf
 
 -
 -

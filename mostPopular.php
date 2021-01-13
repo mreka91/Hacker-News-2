@@ -136,16 +136,13 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                         <!-- edit and delete post -->
                                         <?php if (isset($_SESSION['user']['id'])) : ?>
                                             <?php if ($post['userId'] == $_SESSION['user']['id']) : ?>
-                                                <!-- <div class="changePost"> -->
+
                                                 <div class="editPost">
                                                     <a href="updatePost.php?id=<?php echo $post['id']; ?>"> Edit</a>
                                                 </div>
                                                 <div class="deletePost">
                                                     <a href="app/posts/delete.php?id=<?php echo $post['id']; ?>">Delete</a>
                                                 </div>
-                                                <!-- </div> -->
-                                                <!-- </div> -->
-
                                             <?php endif; ?>
                                         <?php endif; ?>
 
@@ -153,9 +150,11 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                 </div>
 
                                 <div class="ulComments">
-                                    <!-- <ul class="ulComments"> -->
 
-                                    <?php $statement = $pdo->query('SELECT * FROM comments WHERE postId = :postId;'); ?>
+                                    <?php $statement = $pdo->query('SELECT * FROM comments
+                                                                     INNER JOIN users ON users.id = comments.userId
+                                                                    WHERE comments.postId = :postId ;');
+                                    ?>
                                     <?php
                                     if (!$statement) {
                                         die(var_dump($pdo->errorInfo()));
@@ -168,45 +167,32 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                     <?php $comments = $statement->fetchAll(PDO::FETCH_ASSOC); ?>
 
 
-
                                     <?php foreach ($comments as $comment) : ?>
 
-                                        <?php
-                                        if (isset($_GET['id'])) {
-                                            $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
-                                        ?>
-                                        <?php $statement = $pdo->prepare('SELECT * FROM comments
-INNER JOIN users  ON  users.id = comments.userId
-WHERE id = :id ;');
-
-                                            if (!$statement) {
-                                                die(var_dump($pdo->errorInfo()));
-                                            }
-                                            $statement->bindParam(':id', $id, PDO::PARAM_INT);
-
-                                            $statement->execute();
-                                            $user = $statement->fetch(PDO::FETCH_ASSOC);
-                                        }  ?>
+                                        <input type="hidden" name="commentId" value="<?php echo $comment['commentId']; ?>">
+                                        <input type="hidden" name="postId" value="<?php echo $comment['postId']; ?>">
+                                        <input type="hidden" name="userId" value="<?php echo $comment['userId']; ?>">
 
                                         <div class="author">
                                             <div class="userImage">
-                                                <?php if (!$user['avatar']) : ?>
+                                                <?php if (!$comment['avatar']) : ?>
                                                     <img src="/assets/img/avatar.png" alt="default profile image">
                                                 <?php else : ?>
-                                                    <?php if (file_exists(__DIR__ . '/app/users/uploads/' . $user['avatar'])) : ?>
-                                                        <img src=" <?php echo '/app/users/uploads/' . $user['avatar']; ?>" alt="user's profile image">
+                                                    <?php if (file_exists(__DIR__ . '/app/users/uploads/' . $comment['avatar'])) : ?>
+                                                        <img src=" <?php echo '/app/users/uploads/' . $comment['avatar']; ?>" alt="user's profile image">
                                                     <?php endif; ?>
                                                 <?php endif; ?>
                                             </div>
                                             <div class="user">
-                                                <?php if (!$user['firstName']) : ?>
-                                                    <?php echo ' Unknown User'; ?>
+                                                <?php if (!$comment['firstName']) : ?>
+                                                    <?php echo 'Unknown'; ?>
                                                 <?php else : ?>
-                                                    <?php echo $user['firstName'] . ' ' . $user['lastName']; ?>
+                                                    <?php echo $comment['firstName'] . ' ' . $comment['lastName']; ?>
                                                 <?php endif; ?>
                                             </div>
                                         </div>
-                                        <!-- <li class="liComment"> -->
+
+
                                         <div class="commentContent">
                                             <?php echo $comment['comment']; ?>
                                         </div>
@@ -219,15 +205,13 @@ WHERE id = :id ;');
                                                 <input type="hidden" name="userId" value="<?php echo $userId; ?>">
 
                                                 <?php if ($comment['userId'] == $_SESSION['user']['id']) : ?>
-                                                    <a href="app/comments/delete.php?id=<?php echo $comment['id']; ?>">Delete</a>
-                                                    <a href="updateComment.php?id=<?php echo $comment['id']; ?>">Edit</a>
+                                                    <a href="app/comments/delete.php?commentId=<?php echo $comment['commentId']; ?>">Delete</a>
+                                                    <a href="updateComment.php?commentId=<?php echo $comment['commentId']; ?>">Edit</a>
                                                 <?php endif; ?>
                                             <?php endif; ?>
                                         </div>
-                                        <!-- </li> -->
+
                                     <?php endforeach; ?>
-                                    <!-- </ul> -->
-                                    <!-- <button class="moreComments">Show more comments</button> -->
                                 </div>
                             </div>
                         </div>

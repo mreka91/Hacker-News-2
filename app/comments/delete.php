@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-if (isset($_GET['id'])) {
-    $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
+if (isset($_GET['commentId'])) {
+    $commentId = filter_var($_GET['commentId'], FILTER_SANITIZE_NUMBER_INT);
 
 
     $query = 'DELETE FROM comments
-       WHERE id = :id';
+       WHERE commentId = :commentId';
 
     $statement = $pdo->prepare($query);
 
@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
         die(var_dump($pdo->errorInfo()));
     }
 
-    $statement->bindParam(':id', $id, PDO::PARAM_INT);
+    $statement->bindParam(':commentId', $commentId, PDO::PARAM_INT);
 
 
     $statement->execute();

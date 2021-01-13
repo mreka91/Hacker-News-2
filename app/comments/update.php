@@ -8,14 +8,14 @@ require __DIR__ . '/../../views/header.php';
 if (isset($_SESSION['user'])) {
     $userId = $_SESSION['user']['id'];
 
-    if (isset($_POST['comment'], $_POST['id'])) {
+    if (isset($_POST['comment'], $_POST['commentId'])) {
         $comment = filter_var($_POST['comment'], FILTER_SANITIZE_STRING);
-        $id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
+        $commentId = filter_var($_POST['commentId'], FILTER_SANITIZE_NUMBER_INT);
 
         $query = 'UPDATE comments
               SET comment = :comment,
                   createdAt = datetime()
-              WHERE id = :id';
+              WHERE commentId = :commentId';
 
         $statement = $pdo->prepare($query);
 
@@ -24,7 +24,7 @@ if (isset($_SESSION['user'])) {
         }
 
 
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
+        $statement->bindParam(':commentId', $commentId, PDO::PARAM_INT);
         $statement->bindParam(':comment', $comment, PDO::PARAM_STR);
 
         $statement->execute();
