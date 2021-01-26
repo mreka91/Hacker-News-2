@@ -102,7 +102,7 @@ if (isset($_SESSION['user']['id'])) {
 
 
 <article class="delete-form">
-    <!-- shows a success message if the reply was posted/edited/deleted succesfully -->
+    <!-- shows a message what to type in, if it was not "delete" -->
     <?php if (isset($_SESSION['success'])) : ?>
         <div class="message">
             <?php foreach ($_SESSION['success'] as $successMessage) : ?>

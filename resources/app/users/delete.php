@@ -33,6 +33,6 @@ if ($_POST['delete'] === "delete") {
 
     redirect('../../index.php');
 } else {
-    successMessage("Please type in delete");
+    successMessage("Please type in delete!");
     redirect('../../editProfile.php');
 }
