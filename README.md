@@ -36,7 +36,7 @@ Project is created with:
 added by [Reka Madarasz](https://github.com/mreka91)
 
 - [x] As a user I am able to reply to comments, edit and delete them
-- [ ] As a user I am able to delete my profile, all my posts, comments, upvotes and replies
+- [x] As a user I am able to delete my profile, all my posts, comments, upvotes and replies
 
 ## Installation
 

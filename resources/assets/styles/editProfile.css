@@ -56,7 +56,7 @@ input#file-upload-button {
 /*DELETE PROFILE*/
 
 .delete-form {
-  margin-top: 25px;
+  margin-top: 35px;
 }
 
 .delete-form form {
@@ -67,7 +67,7 @@ input#file-upload-button {
 .delete-form button {
   background-color: red;
   color: white;
-  border: none;
+  margin-top: 10px;
 }
 
 .message {
