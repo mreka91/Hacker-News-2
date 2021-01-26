@@ -99,3 +99,24 @@ if (isset($_SESSION['user']['id'])) {
         <button type="submit" name="submit">Edit profile </button>
     </form>
 </article>
+
+
+<article class="delete-form">
+    <!-- shows a success message if the reply was posted/edited/deleted succesfully -->
+    <?php if (isset($_SESSION['success'])) : ?>
+        <div class="message">
+            <?php foreach ($_SESSION['success'] as $successMessage) : ?>
+                <p><?= $successMessage; ?></p>
+            <?php endforeach; ?>
+            <?php unset($_SESSION['success']); ?>
+        </div>
+    <?php endif; ?>
+
+    <!-- form to delete everything -->
+    <form action="app/users/delete.php" method="post">
+        <p class="delete-text">Please type in "delete" to permanently delete your profile with every post, comment, reply and upvote made by you.</p>
+        <label for="delete">Type here: </label>
+        <input type="text" name="delete" placeholder="delete" required />
+        <button type="submit" name="submit">Delete</button>
+    </form>
+</article>
