@@ -1,0 +1,71 @@
+/*REPLIES*/
+
+.success-message {
+  background-color: rgb(13, 65, 235);
+  color: white;
+  width: 30%;
+}
+
+.replies {
+  padding-left: 50px;
+  padding-top: 25px;
+}
+
+.replies-form textarea {
+  width: 150px;
+  border: solid 1px rgb(13, 65, 235);
+  margin-bottom: 5px;
+}
+
+.add-comment-btn {
+  background: transparent;
+  color: rgb(6, 29, 131);
+  border: solid 1px rgb(13, 65, 235);
+  font-size: 16px;
+}
+
+.replies-edit-form button,
+.replies-edit-form label {
+  margin-top: 5px;
+}
+
+.replies-edit-form form label {
+  font-size: 14px;
+}
+.form-control {
+  font-size: 14px;
+}
+
+.delete-btn {
+  color: red;
+  background: transparent;
+  font-size: 14px;
+}
+
+.edit-btn {
+  color: rgb(13, 65, 235);
+  background: transparent;
+  font-size: 14px;
+}
+
+.reply-divider {
+  width: 80%;
+  text-align: left;
+  margin-left: 0;
+}
+
+.edit-reply-forms {
+  margin-top: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+  .reply-divider {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .reply-divider {
+    width: 30%;
+  }
+}

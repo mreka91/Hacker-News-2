@@ -52,3 +52,25 @@ input#file-upload-button {
     font-size: 18px;
   }
 }
+
+/*DELETE PROFILE*/
+
+.delete-form {
+  margin-top: 35px;
+}
+
+.delete-form form {
+  border: 2px dotted red;
+  padding: 15px;
+}
+
+.delete-form button {
+  background-color: red;
+  color: white;
+  margin-top: 10px;
+}
+
+.message {
+  color: red;
+  font-size: 18px;
+}
