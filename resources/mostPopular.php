@@ -151,15 +151,7 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                                 <div class="ulComments">
 
-                                    <!-- shows a success message if the reply was posted/edited/deleted succesfully -->
-                                    <?php if (isset($_SESSION['success'])) : ?>
-                                        <div class="success-message">
-                                            <?php foreach ($_SESSION['success'] as $succ) : ?>
-                                                <p><?= $succ ?></p>
-                                            <?php endforeach; ?>
-                                            <?php unset($_SESSION['success']); ?>
-                                        </div>
-                                    <?php endif; ?>
+
 
                                     <?php $statement = $pdo->query('SELECT * FROM comments
                                                                      INNER JOIN users ON users.id = comments.userId
@@ -237,6 +229,16 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                         ?>
 
                                         <div class="replies">
+
+                                            <!-- shows a success message if the reply was posted/edited/deleted succesfully -->
+                                            <?php if (isset($_SESSION['success'])) : ?>
+                                                <div class="success-message">
+                                                    <?php foreach ($_SESSION['success'] as $succ) : ?>
+                                                        <p><?= $succ ?></p>
+                                                    <?php endforeach; ?>
+                                                    <?php unset($_SESSION['success']); ?>
+                                                </div>
+                                            <?php endif; ?>
 
                                             <!-- REPLIES FORM -->
 
