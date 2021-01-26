@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="/assets/styles/welcome.css">
     <link rel="stylesheet" href="/assets/styles/about.css">
 
-
-
+    <!-- replies styling -->
+    <link rel="stylesheet" href="/assets/styles/replies.css">
 
 
 
