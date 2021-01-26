@@ -205,8 +205,9 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-                                        <!-- REPLIES -->
+                                        <!-- REPLIES STARTING-->
                                         <?php
+                                        // get replies and the commenter name
                                         $commentId = $comment['commentId'];
                                         $statement = $pdo->query('SELECT replies.*, users.firstName FROM replies  JOIN users ON replies.user_id = users.id WHERE replies.comment_id = :commentId ORDER BY replies.created_at DESC');
                                         if (!$statement) {
@@ -222,8 +223,8 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                             <!-- shows a success message if the reply was posted/edited/deleted succesfully -->
                                             <?php if (isset($_SESSION['success'])) : ?>
                                                 <div class="success-message">
-                                                    <?php foreach ($_SESSION['success'] as $succ) : ?>
-                                                        <p><?= $succ ?></p>
+                                                    <?php foreach ($_SESSION['success'] as $successMessage) : ?>
+                                                        <p><?= $successMessage; ?></p>
                                                     <?php endforeach; ?>
                                                     <?php unset($_SESSION['success']); ?>
                                                 </div>
@@ -254,8 +255,7 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                                     <p><?= $reply['content']; ?></p>
                                                     <small><?= $reply['created_at']; ?></small>
                                                     <small><?= $reply['id']; ?></small>
-
-                                                </div>
+                                                </div><!-- end of display-replies -->
 
 
                                                 <?php if (isset($_SESSION['user'])) : ?>
@@ -289,7 +289,7 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                                                 </form>
                                                             </div>
 
-                                                        </div>
+                                                        </div><!-- end of edit-reply-form -->
                                                     <?php endif; ?>
                                                 <?php endif; ?>
 
