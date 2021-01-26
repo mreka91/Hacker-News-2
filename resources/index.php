@@ -201,6 +201,103 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                             <?php endif; ?>
                                         </div>
 
+
+
+
+
+                                        <!-- REPLIES STARTING-->
+                                        <?php
+                                        // get replies and the commenter name
+                                        $commentId = $comment['commentId'];
+                                        $statement = $pdo->query('SELECT replies.*, users.firstName FROM replies  JOIN users ON replies.user_id = users.id WHERE replies.comment_id = :commentId ORDER BY replies.created_at DESC');
+                                        if (!$statement) {
+                                            die(var_dump($pdo->errorInfo()));
+                                        }
+                                        $statement->bindParam(':commentId', $commentId, PDO::PARAM_INT);
+                                        $statement->execute();
+                                        $replies = $statement->fetchAll(PDO::FETCH_ASSOC);
+                                        ?>
+
+                                        <div class="replies">
+
+                                            <!-- shows a success message if the reply was posted/edited/deleted succesfully -->
+                                            <?php if (isset($_SESSION['success'])) : ?>
+                                                <div class="success-message">
+                                                    <?php foreach ($_SESSION['success'] as $successMessage) : ?>
+                                                        <p><?= $successMessage; ?></p>
+                                                    <?php endforeach; ?>
+                                                    <?php unset($_SESSION['success']); ?>
+                                                </div>
+                                            <?php endif; ?>
+
+                                            <!-- REPLIES FORM -->
+
+                                            <div class="replies-form">
+                                                <?php if (isset($_SESSION['user'])) : ?>
+                                                    <form action="app/replies/store.php" method="post">
+                                                        <input type="hidden" id="commentId" name="commentId" value="<?= $comment['commentId']; ?>">
+                                                        <input type="hidden" id="postId" name="postId" value="<?= $postId; ?>">
+                                                        <div class="form-group">
+                                                            <label for="comment"></label>
+                                                            <textarea class="form-control" type="text" name="reply" id="comment" placeholder="Add reply" rows="3" required></textarea>
+                                                        </div>
+
+                                                        <button class="add-comment-btn" type="submit" name="add-reply">Reply</button>
+                                                    </form>
+                                                <?php endif; ?>
+                                            </div><!-- end of replies-form -->
+
+                                            <!-- DISPLAY REPLIES -->
+                                            <?php foreach ($replies as $reply) : ?>
+                                                <hr class="reply-divider">
+                                                <div class="display-replies">
+                                                    <p><?= $reply['firstName']; ?> replied:</p>
+                                                    <p><?= $reply['content']; ?></p>
+                                                    <small><?= $reply['created_at']; ?></small>
+                                                    <small><?= $reply['id']; ?></small>
+                                                </div><!-- end of display-replies -->
+
+
+                                                <?php if (isset($_SESSION['user'])) : ?>
+                                                    <?php if ($reply['user_id'] == $_SESSION['user']['id']) : ?>
+                                                        <div class="edit-reply-forms">
+                                                            <!-- EDIT REPLY -->
+
+                                                            <div class="replies-edit-form">
+                                                                <form action="app/replies/edit.php?id=<?= $reply['id']; ?>" method="post">
+                                                                    <input type="hidden" id="id" name="id" value="<?= $reply['id']; ?>">
+                                                                    <input type="hidden" id="commentId" name="commentId" value="<?= $comment['commentId']; ?>">
+                                                                    <div class="form-group">
+                                                                        <label for="content">Edit reply:</label>
+                                                                        <input name="content" id="content" class="form-control" value="<?= $reply['content'] ?>" required></input>
+                                                                    </div><!-- /form-group -->
+                                                                    <button type="submit" class="edit-btn">Edit</button>
+                                                                </form>
+                                                            </div>
+
+                                                            <!-- DELETE REPLY -->
+
+                                                            <div class="replies-edit-form">
+
+                                                                <form action="app/replies/delete.php?id=<?= $reply['id']; ?>" method="post">
+
+                                                                    <input type="hidden" id="id" name="id" value="<?= $reply['id']; ?>">
+                                                                    <input type="hidden" id="commentId" name="commentId" value="<?= $comment['commentId']; ?>">
+
+
+                                                                    <button type="submit" class="delete-btn">Delete</button>
+                                                                </form>
+                                                            </div>
+
+                                                        </div><!-- end of edit-reply-form -->
+                                                    <?php endif; ?>
+                                                <?php endif; ?>
+
+                                                <hr class="reply-divider">
+                                            <?php endforeach; ?>
+
+                                        </div> <!-- end of replies -->
+
                                     <?php endforeach; ?>
                                 </div>
                             </div>

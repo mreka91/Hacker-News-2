@@ -75,8 +75,7 @@ div.title a {
   font-size: 18px;
   text-decoration: none;
 }
-div.title a:hover {
-}
+
 div.description {
   display: block;
   border-radius: 10px;

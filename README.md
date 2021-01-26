@@ -31,6 +31,13 @@ Project is created with:
 - HTML
 - CSS
 
+## Extra Features
+
+added by [Reka Madarasz](https://github.com/mreka91)
+
+- [x] As a user I am able to reply to comments, edit and delete them
+- [x] As a user I am able to delete my profile, all my posts, comments, upvotes and replies
+
 ## Installation
 
 In the terminal, use the command git clone, then paste the link from your clipboard :
