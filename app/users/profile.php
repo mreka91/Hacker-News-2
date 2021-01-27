@@ -1,13 +1,14 @@
 <?php
 require __DIR__ . '/../autoload.php';
+
 require __DIR__ . '/../../views/header.php';
+
 $errors = [];
 if (isset($_SESSION['user']['id'])) {
     $user = $_SESSION['user'];
     $id = $_SESSION['user']['id'];
 
-
-    if (isset($_POST['biography'], $_POST['email'],  $_POST['firstName'], $_POST['lastName'], $_POST['password'], $_POST['confirmPassword'])) {
+    if (isset($_POST['biography'], $_POST['email'], $_POST['firstName'], $_POST['lastName'], $_POST['password'], $_POST['confirmPassword'])) {
         $biography = filter_var($_POST['biography'], FILTER_SANITIZE_STRING);
         $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
         $firstName = filter_var($_POST['firstName'], FILTER_SANITIZE_STRING);

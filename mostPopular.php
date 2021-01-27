@@ -81,7 +81,6 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                             <?php endif; ?>
                                         </div>
                                         <?php if (isset($_SESSION['user']['id'])) : ?>
-
                                             <?php $user = $_SESSION['user'];
 
                                             $userId = $_SESSION['user']['id'];
@@ -120,7 +119,6 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                                                 <?php endif; ?>
                                             <?php endif; ?>
-
                                             </div>
                                     </div>
                                     <!-- Add comment -->
@@ -136,7 +134,6 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                         <!-- edit and delete post -->
                                         <?php if (isset($_SESSION['user']['id'])) : ?>
                                             <?php if ($post['userId'] == $_SESSION['user']['id']) : ?>
-
                                                 <div class="editPost">
                                                     <a href="updatePost.php?id=<?php echo $post['id']; ?>"> Edit</a>
                                                 </div>
@@ -170,7 +167,6 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
                                     <?php foreach ($comments as $comment) : ?>
-
                                         <input type="hidden" name="commentId" value="<?php echo $comment['commentId']; ?>">
                                         <input type="hidden" name="postId" value="<?php echo $comment['postId']; ?>">
                                         <input type="hidden" name="userId" value="<?php echo $comment['userId']; ?>">

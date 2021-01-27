@@ -5,8 +5,6 @@ declare(strict_types=1);
 require __DIR__ . '/app/autoload.php';
 
 if (isset($_POST['unlike'], $_POST['id'], $_POST['postId'])) {
-
-
     $id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
     $userId = filter_var($_POST['userId'], FILTER_SANITIZE_NUMBER_INT);
     $postId = filter_var($_POST['postId'], FILTER_SANITIZE_NUMBER_INT);

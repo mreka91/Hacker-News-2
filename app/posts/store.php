@@ -8,7 +8,6 @@ require __DIR__ . '/../../views/header.php';
 
 
 if (isset($_SESSION['user']['id'])) {
-
     $userId = $_SESSION['user']['id'];
 
 

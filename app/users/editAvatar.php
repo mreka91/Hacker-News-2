@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/../autoload.php';
-require __DIR__ . '/../../views/header.php';
 
+require __DIR__ . '/../../views/header.php';
 
 if (isset($_SESSION['user']['id'])) {
     $id = $_SESSION['user']['id'];
