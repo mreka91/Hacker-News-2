@@ -1,9 +1,11 @@
 <?php
+
 require __DIR__ . '/../autoload.php';
 
 require __DIR__ . '/../../views/header.php';
 
 $errors = [];
+
 if (isset($_SESSION['user']['id'])) {
     $user = $_SESSION['user'];
     $id = $_SESSION['user']['id'];

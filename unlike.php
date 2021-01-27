@@ -59,7 +59,5 @@ if (isset($_POST['unlike'], $_POST['id'], $_POST['postId'])) {
     // delete from likes table
 
 }
-// }
-
 
 redirect('/');
